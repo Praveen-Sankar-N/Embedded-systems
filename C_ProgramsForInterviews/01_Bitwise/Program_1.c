@@ -10,7 +10,7 @@
 #include <stdio.h>
 
 int main(){
-    unsigned int num1 = 8, num2 = 10;
+    unsigned int num1 = 100, num2 = 1128;
     unsigned int temp1 = 0, temp2 = 0;
 
     for(int i = 0; i < 32; i++)
@@ -19,7 +19,7 @@ int main(){
         temp2 = (num2 & (1 << i));
         if (temp1 ^ temp2){
             //num2 = (num2 & (~1 << i)) | (temp2 ^ (1 << i));
-            num2 = num2 | (temp2 ^ (1 << i));
+            num2 = (num2 & (~(1 << i))) | temp1;
         }
     }
 
